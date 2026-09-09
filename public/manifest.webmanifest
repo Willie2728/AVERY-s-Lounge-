@@ -1,0 +1,13 @@
+{
+  "name": "Avery's Clubhouse",
+  "short_name": "Avery's",
+  "description": "Avery's sports, learning, music, and creator clubhouse.",
+  "start_url": "/#lounge",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0d0e0f",
+  "theme_color": "#0d0e0f",
+  "icons": [
+    {"src": "/assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable"}
+  ]
+}

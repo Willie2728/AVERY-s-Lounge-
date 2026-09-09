@@ -1,0 +1,7 @@
+Editable source: src/remotion/
+Composition: AverySportsIntro (1920x1080, 30fps)
+Scenes: Scene49ers.jsx, SceneWarriors.jsx, SceneMessi.jsx
+Transitions: @remotion/transitions fade
+Animation: useCurrentFrame() + interpolate()
+Audio: public/assets/original-clubhouse-theme.wav, generated locally by scripts/generate-original-music.mjs
+Media is original fan-made motion graphics. No broadcast footage, league/team marks, commercial music, or endorsement is included.

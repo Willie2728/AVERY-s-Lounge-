@@ -1,0 +1,26 @@
+{
+  "name": "averys-clubhouse",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/prepare-sites-build.mjs",
+    "lint": "vite build --emptyOutDir",
+    "remotion:studio": "remotion studio src/remotion/index.jsx --no-open",
+    "remotion:render": "remotion render src/remotion/index.jsx AverySportsIntro public/assets/avery-sports-intro.mp4",
+    "preview": "vite preview",
+    "test:sites": "node --test tests/sites-worker.test.mjs"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.506",
+    "@remotion/media": "4.0.506",
+    "@remotion/transitions": "4.0.506",
+    "@vitejs/plugin-react": "5.0.4",
+    "vite": "6.4.2",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.506"
+  },
+  "devDependencies": {}
+}

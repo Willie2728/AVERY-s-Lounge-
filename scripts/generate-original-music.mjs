@@ -1,0 +1,4 @@
+import fs from 'node:fs';
+const rate=44100,seconds=11,count=rate*seconds,data=Buffer.alloc(count*2),notes=[196,247,294,330,294,247,220,262];
+for(let i=0;i<count;i++){const t=i/rate,n=notes[Math.floor(t*2)%notes.length],beat=Math.exp(-((t*2)%1)*4),v=(Math.sin(2*Math.PI*n*t)*.19+Math.sin(2*Math.PI*n*2*t)*.05)*beat;data.writeInt16LE(Math.max(-32767,Math.min(32767,Math.round(v*32767))),i*2)}
+const h=Buffer.alloc(44);h.write('RIFF');h.writeUInt32LE(36+data.length,4);h.write('WAVEfmt ',8);h.writeUInt32LE(16,16);h.writeUInt16LE(1,20);h.writeUInt16LE(1,22);h.writeUInt32LE(rate,24);h.writeUInt32LE(rate*2,28);h.writeUInt16LE(2,32);h.writeUInt16LE(16,34);h.write('data',36);h.writeUInt32LE(data.length,40);fs.mkdirSync('public/assets',{recursive:true});fs.writeFileSync('public/assets/original-clubhouse-theme.wav',Buffer.concat([h,data]));

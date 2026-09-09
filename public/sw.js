@@ -1,4 +1,4 @@
-const CACHE = "avery-clubhouse-v1";
+const CACHE = "avery-clubhouse-v2";
 const APP_SHELL = ["/", "/manifest.webmanifest", "/assets/icon.svg", "/assets/lounge.png", "/assets/willie-avatar.webp"];
 self.addEventListener("install", event => event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(APP_SHELL)).then(() => self.skipWaiting())));
 self.addEventListener("activate", event => event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE).map(key => caches.delete(key)))).then(() => self.clients.claim())));
